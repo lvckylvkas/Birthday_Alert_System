@@ -7,7 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class SubmitButton extends JPanel implements ActionListener {
+public class SubmitButton extends JPanel {
 
 	JButton button;
 	JLabel label;
@@ -15,7 +15,6 @@ public class SubmitButton extends JPanel implements ActionListener {
 	public SubmitButton() {
 		super();
 		button = new JButton("Submit");
-		button.addActionListener(this);
 		add(button);
 		label = new JLabel("Birthday Submitted");
 		label.setVisible(false);
@@ -31,13 +30,5 @@ public class SubmitButton extends JPanel implements ActionListener {
 		
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		if (isCorrect())
-			sumbittedSucessfully();
-		else
-			button.setText("Incorrect Dateformat");
-		
-	}
-
+	
 }
