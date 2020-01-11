@@ -1,1 +1,0 @@
-java -jar birthday_alert.jar
