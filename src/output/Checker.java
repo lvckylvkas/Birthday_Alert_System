@@ -14,7 +14,7 @@ public class Checker {
 	public String[] getCsv() {
 		ArrayList<String> list= new ArrayList<>();
 		try {
-			fr = new BufferedReader(new FileReader(new File("resources/birthdays.csv")));
+			fr = new BufferedReader(new FileReader(new File("C:/Users/Julian/git/Birthday_Alert_System/resources/birthdays.csv")));
 			String line = "";
 			while((line = fr.readLine()) != null)
 				list.add(line);
@@ -41,7 +41,6 @@ public class Checker {
 			}
 			}
 			catch(Exception e) {
-				System.out.println("First line can't be a date");
 			}
 		}
 		return result;
