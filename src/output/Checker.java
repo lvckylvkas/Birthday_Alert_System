@@ -37,7 +37,6 @@ public class Checker {
 		Date today = new Date();
 		//create dateformat for comparison(dayday.monthmonth)
 		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM");
-		Date birthday;
 		//split line into [name,birthday] and compare birthday w/ current day
 		for (String line : getCsv()) {
 			String[] parted = line.split(";");

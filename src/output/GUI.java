@@ -4,9 +4,7 @@ import java.awt.Font;
 import java.text.ParseException;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.text.Style;
 
 public class GUI extends JFrame{
 	

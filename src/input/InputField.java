@@ -7,6 +7,10 @@ import javax.swing.SwingConstants;
 
 public class InputField extends JPanel{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	JLabel label;
 	JTextField text;
 	
