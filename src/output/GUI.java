@@ -24,6 +24,8 @@ public class GUI extends JFrame{
 		String result = "";
 		for(String name : c.getBirthdayPeople())
 			result += name + " has Birthday!\n";
+		if(result.equals(""))
+			System.exit(0);
 		output.setText(result);
 		add(output);
 		output.setFont(new Font(Font.MONOSPACED, Font.BOLD, 50));
