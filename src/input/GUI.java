@@ -22,18 +22,21 @@ public class GUI extends JFrame implements ActionListener {
 	FileWriter fw;
 	BufferedReader fr;
 
+	//input gui
 	public GUI(String s) {
 		super(s);
 		this.setVisible(true);
 		setLayout(new BorderLayout());
+		//add info label
 		info = new JLabel("Insert Name and Birthday(dd.mm):");
 		add(info, BorderLayout.NORTH);
+		//add inputfields
 		input = new InputFields();
 		input.birthday.text.addActionListener(this);
 		add(input, BorderLayout.CENTER);
+		//add submitbutton
 		submit = new SubmitButton();
 		submit.button.addActionListener(this);
-
 		add(submit, BorderLayout.SOUTH);
 		this.pack();
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -41,20 +44,23 @@ public class GUI extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		//check if datepattern matches dayday.monthmonth, if not print "invalid date format"
 		if (!input.birthday.text.getText().matches("\\d\\d\\.\\d\\d")) {
 			submit.label.setText("invalid date format");
 			submit.label.setVisible(true);
-		} else {
+		}
+		//if yes, read in csv and add the inserted information
+		else {
 			String text = readCsv();
 			text += input.name.text.getText() + ";" + input.birthday.text.getText() + "\r\n";
 			writeCsv(text);
 			submit.label.setText("Birthday saved");
 			submit.label.setVisible(true);
-
 		}
 
 	}
 	
+	//reads in csvfile in resources
 	public String readCsv() {
 		try {
 			fr = new BufferedReader(new FileReader("resources/birthdays.csv"));
@@ -71,6 +77,7 @@ public class GUI extends JFrame implements ActionListener {
 		return null;
 	}
 	
+	//appends string s to csvfile
 	public void writeCsv(String s) {
 		try {
 			fw = new FileWriter(new File("resources/birthdays.csv"));
