@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
@@ -60,11 +61,10 @@ public class GUI extends JFrame implements ActionListener {
 			StringBuilder s = new StringBuilder();
 			String row = "";
 			while ((row = fr.readLine()) != null) {
-				s.append(row);
-				System.out.println(row);
+				s.append(row + "\n");
 			}
 			fr.close();
-			return s.toString();
+			return s.toString().substring(0,s.toString().length()-1);
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
 		}
@@ -74,8 +74,11 @@ public class GUI extends JFrame implements ActionListener {
 	public void writeCsv(String s) {
 		try {
 			fw = new FileWriter(new File("resources/birthdays.csv"));
-			fw.append(s);
-			fw.close();
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write(s);
+			bw.newLine();
+			bw.close();
+			input.clear();
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
 		}

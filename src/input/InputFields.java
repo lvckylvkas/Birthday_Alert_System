@@ -17,4 +17,9 @@ public class InputFields extends JPanel{
 		add(birthday);
 
 	}
+	
+	public void clear() {
+		name.text.setText("");
+		birthday.text.setText("");
+	}
 }
