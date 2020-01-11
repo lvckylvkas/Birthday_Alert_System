@@ -10,6 +10,10 @@ import javax.swing.text.Style;
 
 public class GUI extends JFrame{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Checker c;
 	
 	public GUI(String s) {
