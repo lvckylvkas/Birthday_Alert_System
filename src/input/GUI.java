@@ -47,7 +47,7 @@ public class GUI extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		//check if datepattern matches dayday.monthmonth, if not print "invalid date format"
-		if (!input.birthday.text.getText().matches("\\d\\d\\.\\d\\d")) {
+		if (!input.birthday.text.getText().matches("[0123]\\d\\.[01]\\d")) {
 			submit.label.setText("invalid date format");
 			submit.label.setVisible(true);
 		}
