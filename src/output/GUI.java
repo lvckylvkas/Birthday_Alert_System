@@ -20,10 +20,13 @@ public class GUI extends JFrame{
 		JTextArea output = new JTextArea();
 		Checker c = new Checker();
 		String result = "";
+		//checks who has birthday and appends to result string
 		for(String name : c.getBirthdayPeople())
 			result += name + " has Birthday!\n";
+		//if no one has birthday, close program
 		if(result.equals(""))
 			System.exit(0);
+		//add result to textarea
 		output.setText(result);
 		add(output);
 		output.setFont(new Font(Font.MONOSPACED, Font.BOLD, 50));
