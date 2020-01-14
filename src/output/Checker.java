@@ -16,7 +16,7 @@ public class Checker {
 		try {
 			//Create filereader
 			fr = new BufferedReader(
-					new FileReader(new File("C:/Users/Julian/git/Birthday_Alert_System/resources/birthdays.csv")));
+					new FileReader(new File("C:/Users/admin/git/Birthday_Alert_System/resources/birthdays.csv")));
 			String line = "";
 			//read in file
 			while ((line = fr.readLine()) != null)
